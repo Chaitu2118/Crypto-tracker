@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-coins"></i> Crypto Tracker</h1>
+            <div class="refresh" id="refresh-btn">
+                <i class="fas fa-sync-alt"></i> Refresh
+            </div>
+        </header>
+        
+        <div class="controls">
+            <input type="text" id="search-input" placeholder="Search cryptocurrencies...">
+            <select id="sort-select">
+                <option value="market_cap">Sort by: Market Cap</option>
+                <option value="price">Sort by: Price</option>
+                <option value="24h_change">Sort by: 24h Change</option>
+                <option value="name">Sort by: Name</option>
+            </select>
+        </div>
+        
+        <div class="crypto-list" id="crypto-list">
+            <!-- Crypto cards will be inserted here by JavaScript -->
+            <div class="loading">Loading cryptocurrency data...</div>
+        </div>
+        
+        <footer>
+            <p>Data provided by CoinGecko API</p>
+            <p>Last updated: <span id="last-updated"></span></p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
